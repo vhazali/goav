@@ -67,15 +67,21 @@ func AvfilterLinkFree(l **Link) {
 	C.avfilter_link_free((**C.struct_AVFilterLink)(unsafe.Pointer(l)))
 }
 
+// Deprecated: Deprecate avfilter_link_get_channels(), and make AVFilterLink->channels
+// public.
+// https://github.com/FFmpeg/FFmpeg/commit/798dcf2432999f449c76c0e0fe2d7a4ee5eabbc2
 //Get the number of channels of a link.
-func AvfilterLinkGetChannels(l *Link) int {
-	return int(C.avfilter_link_get_channels((*C.struct_AVFilterLink)(l)))
-}
+// func AvfilterLinkGetChannels(l *Link) int {
+// 	return int(C.avfilter_link_get_channels((*C.struct_AVFilterLink)(l)))
+// }
 
+// Deprecated: applications are not supposed to mess with links, they should
+// close the sinks.
+// https://github.com/FFmpeg/FFmpeg/commit/39a09e995d32d16e4f8c87a6ff5273cb9d98146e
 //Set the closed field of a link.
-func AvfilterLinkSetClosed(l *Link, c int) {
-	C.avfilter_link_set_closed((*C.struct_AVFilterLink)(l), C.int(c))
-}
+// func AvfilterLinkSetClosed(l *Link, c int) {
+// 	C.avfilter_link_set_closed((*C.struct_AVFilterLink)(l), C.int(c))
+// }
 
 //Negotiate the media format, dimensions, etc of all inputs to a filter.
 func AvfilterConfigLinks(f *Context) int {
@@ -87,10 +93,12 @@ func AvfilterProcessCommand(f *Context, cmd, arg, res string, l, fl int) int {
 	return int(C.avfilter_process_command((*C.struct_AVFilterContext)(f), C.CString(cmd), C.CString(arg), C.CString(res), C.int(l), C.int(fl)))
 }
 
+// Deprecated
+// could not find commit
 //Initialize the filter system.
-func AvfilterRegisterAll() {
-	C.avfilter_register_all()
-}
+// func AvfilterRegisterAll() {
+// 	C.avfilter_register_all()
+// }
 
 //Initialize a filter with the supplied parameters.
 func (ctx *Context) AvfilterInitStr(args string) int {

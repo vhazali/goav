@@ -12,6 +12,7 @@ package avutil
 //#include <stdlib.h>
 import "C"
 import (
+	"fmt"
 	"unsafe"
 )
 
@@ -47,7 +48,7 @@ func AvGetMediaTypeString(mt MediaType) string {
 
 //Return a single letter to describe the given picture type pict_type.
 func AvGetPictureTypeChar(pt AvPictureType) string {
-	return string(C.av_get_picture_type_char((C.enum_AVPictureType)(pt)))
+	return fmt.Sprint(C.av_get_picture_type_char((C.enum_AVPictureType)(pt)))
 }
 
 //Return x default pointer in case p is NULL.

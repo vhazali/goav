@@ -7,9 +7,11 @@ func (ctxt *Context) ActiveThreadType() int {
 	return int(ctxt.active_thread_type)
 }
 
-func (ctxt *Context) BFrameStrategy() int {
-	return int(ctxt.b_frame_strategy)
-}
+// Deprecated: use encoder private options instead
+// commit: 0e6c8532215790bbe560a9eea4f3cc82bb55cf92
+// func (ctxt *Context) BFrameStrategy() int {
+// 	return int(ctxt.b_frame_strategy)
+// }
 
 func (ctxt *Context) BQuantFactor() float64 {
 	return float64(ctxt.b_quant_factor)
@@ -19,9 +21,11 @@ func (ctxt *Context) BQuantOffset() float64 {
 	return float64(ctxt.b_quant_offset)
 }
 
-func (ctxt *Context) BSensitivity() int {
-	return int(ctxt.b_sensitivity)
-}
+// Deprecated: use encoder private options instead
+// commit: 0e6c8532215790bbe560a9eea4f3cc82bb55cf92
+// func (ctxt *Context) BSensitivity() int {
+// 	return int(ctxt.b_sensitivity)
+// }
 
 func (ctxt *Context) BidirRefine() int {
 	return int(ctxt.bidir_refine)
@@ -47,17 +51,21 @@ func (ctxt *Context) BlockAlign() int {
 	return int(ctxt.block_align)
 }
 
-func (ctxt *Context) BrdScale() int {
-	return int(ctxt.brd_scale)
-}
+// Deprecated: use encoder private options instead
+// Commit: 84c4714f397c9c50eb9d49008cc1c08385f68f31
+// func (ctxt *Context) BrdScale() int {
+// 	return int(ctxt.brd_scale)
+// }
 
 func (ctxt *Context) Channels() int {
 	return int(ctxt.channels)
 }
 
-func (ctxt *Context) Chromaoffset() int {
-	return int(ctxt.chromaoffset)
-}
+// Deprecated: use encoder private options instead
+// Commit: 5764d38173661c29d954711dd5abfddf709e9ba4
+// func (ctxt *Context) Chromaoffset() int {
+// 	return int(ctxt.chromaoffset)
+// }
 
 func (ctxt *Context) CodedHeight() int {
 	return int(ctxt.coded_height)
@@ -67,17 +75,21 @@ func (ctxt *Context) CodedWidth() int {
 	return int(ctxt.coded_width)
 }
 
-func (ctxt *Context) CoderType() int {
-	return int(ctxt.coder_type)
-}
+// Deprecated: use encoder private options instead
+// Commit: be00ec832c519427cd92218abac77dafdc1d5487
+// func (ctxt *Context) CoderType() int {
+// 	return int(ctxt.coder_type)
+// }
 
 func (ctxt *Context) CompressionLevel() int {
 	return int(ctxt.compression_level)
 }
 
-func (ctxt *Context) ContextModel() int {
-	return int(ctxt.context_model)
-}
+// Deprecated: use encoder private options instead
+// Commit: 96c373c7704aeb1cc1d2c275fbb5d71777665589
+// func (ctxt *Context) ContextModel() int {
+// 	return int(ctxt.context_model)
+// }
 
 func (ctxt *Context) Cutoff() int {
 	return int(ctxt.cutoff)
@@ -127,9 +139,11 @@ func (ctxt *Context) Flags2() int {
 	return int(ctxt.flags2)
 }
 
-func (ctxt *Context) FrameBits() int {
-	return int(ctxt.frame_bits)
-}
+// Deprecated
+// could not find commit
+// func (ctxt *Context) FrameBits() int {
+// 	return int(ctxt.frame_bits)
+// }
 
 func (ctxt *Context) FrameNumber() int {
 	return int(ctxt.frame_number)
@@ -139,21 +153,29 @@ func (ctxt *Context) FrameSize() int {
 	return int(ctxt.frame_size)
 }
 
-func (ctxt *Context) FrameSkipCmp() int {
-	return int(ctxt.frame_skip_cmp)
-}
+// Deprecated: use encoder private options instead
+// Commit: 0ac9f33a9e69c64eee592791be3c5441a6a3d6b7
+// func (ctxt *Context) FrameSkipCmp() int {
+// 	return int(ctxt.frame_skip_cmp)
+// }
 
-func (ctxt *Context) FrameSkipExp() int {
-	return int(ctxt.frame_skip_exp)
-}
+// Deprecated: use encoder private options instead
+// Commit: 0ac9f33a9e69c64eee592791be3c5441a6a3d6b7
+// func (ctxt *Context) FrameSkipExp() int {
+// 	return int(ctxt.frame_skip_exp)
+// }
 
-func (ctxt *Context) FrameSkipFactor() int {
-	return int(ctxt.frame_skip_factor)
-}
+// Deprecated: use encoder private options instead
+// Commit: 0ac9f33a9e69c64eee592791be3c5441a6a3d6b7
+// func (ctxt *Context) FrameSkipFactor() int {
+// 	return int(ctxt.frame_skip_factor)
+// }
 
-func (ctxt *Context) FrameSkipThreshold() int {
-	return int(ctxt.frame_skip_threshold)
-}
+// Deprecated: use encoder private options instead
+// Commit: 0ac9f33a9e69c64eee592791be3c5441a6a3d6b7
+// func (ctxt *Context) FrameSkipThreshold() int {
+// 	return int(ctxt.frame_skip_threshold)
+// }
 
 func (ctxt *Context) GlobalQuality() int {
 	return int(ctxt.global_quality)
@@ -167,17 +189,21 @@ func (ctxt *Context) HasBFrames() int {
 	return int(ctxt.has_b_frames)
 }
 
-func (ctxt *Context) HeaderBits() int {
-	return int(ctxt.header_bits)
-}
+// Deprecated
+// could not find commit
+// func (ctxt *Context) HeaderBits() int {
+// 	return int(ctxt.header_bits)
+// }
 
 func (ctxt *Context) Height() int {
 	return int(ctxt.height)
 }
 
-func (ctxt *Context) ICount() int {
-	return int(ctxt.i_count)
-}
+// Deprecated
+// could not find commit
+// func (ctxt *Context) ICount() int {
+// 	return int(ctxt.i_count)
+// }
 
 func (ctxt *Context) IQuantFactor() float64 {
 	return float64(ctxt.i_quant_factor)
@@ -187,9 +213,11 @@ func (ctxt *Context) IQuantOffset() float64 {
 	return float64(ctxt.i_quant_offset)
 }
 
-func (ctxt *Context) ITexBits() int {
-	return int(ctxt.i_tex_bits)
-}
+// Deprecated
+// could not find commit
+// func (ctxt *Context) ITexBits() int {
+// 	return int(ctxt.i_tex_bits)
+// }
 
 func (ctxt *Context) IdctAlgo() int {
 	return int(ctxt.idct_algo)
@@ -231,9 +259,11 @@ func (ctxt *Context) MaxBFrames() int {
 	return int(ctxt.max_b_frames)
 }
 
-func (ctxt *Context) MaxPredictionOrder() int {
-	return int(ctxt.max_prediction_order)
-}
+// Deprecated
+// could not find commit
+// func (ctxt *Context) MaxPredictionOrder() int {
+// 	return int(ctxt.max_prediction_order)
+// }
 
 func (ctxt *Context) MaxQdiff() int {
 	return int(ctxt.max_qdiff)
@@ -259,9 +289,11 @@ func (ctxt *Context) MeCmp() int {
 	return int(ctxt.me_cmp)
 }
 
-func (ctxt *Context) MePenaltyCompensation() int {
-	return int(ctxt.me_penalty_compensation)
-}
+// Deprecated: use encoder private options instead
+// 5b6f42da98c26a8aee8d2c2edfcbd0633ad1c607
+// func (ctxt *Context) MePenaltyCompensation() int {
+// 	return int(ctxt.me_penalty_compensation)
+// }
 
 func (ctxt *Context) MePreCmp() int {
 	return int(ctxt.me_pre_cmp)
@@ -279,57 +311,75 @@ func (ctxt *Context) MeSubpelQuality() int {
 	return int(ctxt.me_subpel_quality)
 }
 
-func (ctxt *Context) MinPredictionOrder() int {
-	return int(ctxt.min_prediction_order)
-}
+// Deprecated
+// could not find commit
+// func (ctxt *Context) MinPredictionOrder() int {
+// 	return int(ctxt.min_prediction_order)
+// }
 
-func (ctxt *Context) MiscBits() int {
-	return int(ctxt.misc_bits)
-}
+// Deprecated
+// could not find commit
+// func (ctxt *Context) MiscBits() int {
+// 	return int(ctxt.misc_bits)
+// }
 
-func (ctxt *Context) MpegQuant() int {
-	return int(ctxt.mpeg_quant)
-}
+// Deprecated: use encoder private options instead
+// Commit: 12b49769223234673db1003d9c43e7483ceb0282
+// func (ctxt *Context) MpegQuant() int {
+// 	return int(ctxt.mpeg_quant)
+// }
 
 func (ctxt *Context) Mv0Threshold() int {
 	return int(ctxt.mv0_threshold)
 }
 
-func (ctxt *Context) MvBits() int {
-	return int(ctxt.mv_bits)
-}
+// Deprecated
+// could not find commit
+// func (ctxt *Context) MvBits() int {
+// 	return int(ctxt.mv_bits)
+// }
 
-func (ctxt *Context) NoiseReduction() int {
-	return int(ctxt.noise_reduction)
-}
+// Deprecated: use encoder private options instead
+// Commit: 1482aff2048511b821ff9feac19426113cc641a2
+// func (ctxt *Context) NoiseReduction() int {
+// 	return int(ctxt.noise_reduction)
+// }
 
 func (ctxt *Context) NsseWeight() int {
 	return int(ctxt.nsse_weight)
 }
 
-func (ctxt *Context) PCount() int {
-	return int(ctxt.p_count)
-}
+// Deprecated
+// could not find commit
+// func (ctxt *Context) PCount() int {
+// 	return int(ctxt.p_count)
+// }
 
 func (ctxt *Context) PMasking() float64 {
 	return float64(ctxt.p_masking)
 }
 
-func (ctxt *Context) PTexBits() int {
-	return int(ctxt.p_tex_bits)
-}
+// Deprecated
+// could not find commit
+// func (ctxt *Context) PTexBits() int {
+// 	return int(ctxt.p_tex_bits)
+// }
 
 func (ctxt *Context) PreDiaSize() int {
 	return int(ctxt.pre_dia_size)
 }
 
-func (ctxt *Context) PreMe() int {
-	return int(ctxt.pre_me)
-}
+// Deprecated: use encoder private options instead
+// Commit: 0e9c4fe254073b209970df3e3cb84531bc388e99
+// func (ctxt *Context) PreMe() int {
+// 	return int(ctxt.pre_me)
+// }
 
-func (ctxt *Context) PredictionMethod() int {
-	return int(ctxt.prediction_method)
-}
+// Deprecated: use encoder private options instead
+// Commit: 2862b63783b5556f7f3fb2d097629bc6879f833a
+// func (ctxt *Context) PredictionMethod() int {
+// 	return int(ctxt.prediction_method)
+// }
 
 func (ctxt *Context) Profile() int {
 	return int(ctxt.profile)
@@ -379,33 +429,45 @@ func (ctxt *Context) RcOverrideCount() int {
 	return int(ctxt.rc_override_count)
 }
 
-func (ctxt *Context) RefcountedFrames() int {
-	return int(ctxt.refcounted_frames)
-}
+// Deprecated: This was useful for deprecated
+// API only (avcodec_decode_video2/avcodec_decode_audio4). The new decode APIs
+// (avcodec_send_packet/avcodec_receive_frame) always work with reference
+// counted frames.
+// Commit: 577326d430593a25456393a75212b95d1cd94131
+// func (ctxt *Context) RefcountedFrames() int {
+// 	return int(ctxt.refcounted_frames)
+// }
 
 func (ctxt *Context) Refs() int {
 	return int(ctxt.refs)
 }
 
-func (ctxt *Context) RtpPayloadSize() int {
-	return int(ctxt.rtp_payload_size)
-}
+// Deprecated: use encoder private options instead
+// Commit: 936f0d98f864f9f6bb4f9e5458b78537e146bacd
+// func (ctxt *Context) RtpPayloadSize() int {
+// 	return int(ctxt.rtp_payload_size)
+// }
 
 func (ctxt *Context) SampleRate() int {
 	return int(ctxt.sample_rate)
 }
 
-func (ctxt *Context) ScenechangeThreshold() int {
-	return int(ctxt.scenechange_threshold)
-}
+// Deprecated: use encoder private options instead
+// Commit: 7c79587d7407dab4b9445d66b5f111fe657c8c4d
+// func (ctxt *Context) ScenechangeThreshold() int {
+// 	return int(ctxt.scenechange_threshold)
+// }
 
 func (ctxt *Context) SeekPreroll() int {
 	return int(ctxt.seek_preroll)
 }
 
-func (ctxt *Context) SideDataOnlyPackets() int {
-	return int(ctxt.side_data_only_packets)
-}
+// Deprecated: this field disables the default behaviour and
+// it is kept only for compatibility.
+// Commit: 6064f697a321174232a3fad351afb21150c3e9e5
+// func (ctxt *Context) SideDataOnlyPackets() int {
+// 	return int(ctxt.side_data_only_packets)
+// }
 
 func (ctxt *Context) SkipAlpha() int {
 	return int(ctxt.skip_alpha)
@@ -415,9 +477,11 @@ func (ctxt *Context) SkipBottom() int {
 	return int(ctxt.skip_bottom)
 }
 
-func (ctxt *Context) SkipCount() int {
-	return int(ctxt.skip_count)
-}
+// Deprecated
+// could not find commit
+// func (ctxt *Context) SkipCount() int {
+// 	return int(ctxt.skip_count)
+// }
 
 func (ctxt *Context) SkipTop() int {
 	return int(ctxt.skip_top)

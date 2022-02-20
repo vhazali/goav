@@ -10,8 +10,8 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/giorgisio/goav/avcodec"
-	"github.com/giorgisio/goav/avutil"
+	"github.com/vhazali/goav/avcodec"
+	"github.com/vhazali/goav/avutil"
 )
 
 const (
@@ -21,49 +21,71 @@ const (
 	AvseekFlagFrame    = 8 ///< seeking based on frame number
 )
 
-func (s *Context) AvFormatGetProbeScore() int {
-	return int(C.av_format_get_probe_score((*C.struct_AVFormatContext)(s)))
-}
+// Deprecated
+// could not find commit
+// func (s *Context) AvFormatGetProbeScore() int {
+// 	return int(C.av_format_get_probe_score((*C.struct_AVFormatContext)(s)))
+// }
 
-func (s *Context) AvFormatGetVideoCodec() *AvCodec {
-	return (*AvCodec)(C.av_format_get_video_codec((*C.struct_AVFormatContext)(s)))
-}
+// Deprecated
+// could not find commit
+// func (s *Context) AvFormatGetVideoCodec() *AvCodec {
+// 	return (*AvCodec)(C.av_format_get_video_codec((*C.struct_AVFormatContext)(s)))
+// }
 
-func (s *Context) AvFormatSetVideoCodec(c *AvCodec) {
-	C.av_format_set_video_codec((*C.struct_AVFormatContext)(s), (*C.struct_AVCodec)(c))
-}
+// Deprecated
+// could not find commit
+// func (s *Context) AvFormatSetVideoCodec(c *AvCodec) {
+// 	C.av_format_set_video_codec((*C.struct_AVFormatContext)(s), (*C.struct_AVCodec)(c))
+// }
 
-func (s *Context) AvFormatGetAudioCodec() *AvCodec {
-	return (*AvCodec)(C.av_format_get_audio_codec((*C.struct_AVFormatContext)(s)))
-}
+// Deprecated
+// could not find commit
+// func (s *Context) AvFormatGetAudioCodec() *AvCodec {
+// 	return (*AvCodec)(C.av_format_get_audio_codec((*C.struct_AVFormatContext)(s)))
+// }
 
-func (s *Context) AvFormatSetAudioCodec(c *AvCodec) {
-	C.av_format_set_audio_codec((*C.struct_AVFormatContext)(s), (*C.struct_AVCodec)(c))
-}
+// Deprecated
+// could not find commit
+// func (s *Context) AvFormatSetAudioCodec(c *AvCodec) {
+// 	C.av_format_set_audio_codec((*C.struct_AVFormatContext)(s), (*C.struct_AVCodec)(c))
+// }
 
-func (s *Context) AvFormatGetSubtitleCodec() *AvCodec {
-	return (*AvCodec)(C.av_format_get_subtitle_codec((*C.struct_AVFormatContext)(s)))
-}
+// Deprecated
+// could not find commit
+// func (s *Context) AvFormatGetSubtitleCodec() *AvCodec {
+// 	return (*AvCodec)(C.av_format_get_subtitle_codec((*C.struct_AVFormatContext)(s)))
+// }
 
-func (s *Context) AvFormatSetSubtitleCodec(c *AvCodec) {
-	C.av_format_set_subtitle_codec((*C.struct_AVFormatContext)(s), (*C.struct_AVCodec)(c))
-}
+// Deprecated
+// could not find commit
+// func (s *Context) AvFormatSetSubtitleCodec(c *AvCodec) {
+// 	C.av_format_set_subtitle_codec((*C.struct_AVFormatContext)(s), (*C.struct_AVCodec)(c))
+// }
 
-func (s *Context) AvFormatGetMetadataHeaderPadding() int {
-	return int(C.av_format_get_metadata_header_padding((*C.struct_AVFormatContext)(s)))
-}
+// Deprecated
+// could not find commit
+// func (s *Context) AvFormatGetMetadataHeaderPadding() int {
+// 	return int(C.av_format_get_metadata_header_padding((*C.struct_AVFormatContext)(s)))
+// }
 
-func (s *Context) AvFormatSetMetadataHeaderPadding(c int) {
-	C.av_format_set_metadata_header_padding((*C.struct_AVFormatContext)(s), C.int(c))
-}
+// Deprecated
+// could not find commit
+// func (s *Context) AvFormatSetMetadataHeaderPadding(c int) {
+// 	C.av_format_set_metadata_header_padding((*C.struct_AVFormatContext)(s), C.int(c))
+// }
 
-func (s *Context) AvFormatGetOpaque() {
-	C.av_format_get_opaque((*C.struct_AVFormatContext)(s))
-}
+// Deprecated
+// could not find commit
+// func (s *Context) AvFormatGetOpaque() {
+// 	C.av_format_get_opaque((*C.struct_AVFormatContext)(s))
+// }
 
-func (s *Context) AvFormatSetOpaque(o int) {
-	C.av_format_set_opaque((*C.struct_AVFormatContext)(s), unsafe.Pointer(&o))
-}
+// Deprecated
+// could not find commit
+// func (s *Context) AvFormatSetOpaque(o int) {
+// 	C.av_format_set_opaque((*C.struct_AVFormatContext)(s), unsafe.Pointer(&o))
+// }
 
 //This function will cause global side data to be injected in the next packet of each stream as well as after any subsequent seek.
 func (s *Context) AvFormatInjectGlobalSideData() {
@@ -218,9 +240,9 @@ func (s *Context) AvformatQueueAttachedPictures() int {
 
 func (s *Context) AvformatNewStream2(c *AvCodec) *Stream {
 	stream := (*Stream)(C.avformat_new_stream((*C.struct_AVFormatContext)(s), (*C.struct_AVCodec)(c)))
-	stream.codec.pix_fmt = int32(avcodec.AV_PIX_FMT_YUV)
-	stream.codec.width = 640
-	stream.codec.height = 480
+	// stream.Codec.pix_fmt = int32(avcodec.AV_PIX_FMT_YUV)
+	// stream.Codec.width = 640
+	// stream.Codec.height = 480
 	stream.time_base.num = 1
 	stream.time_base.num = 25
 	return stream

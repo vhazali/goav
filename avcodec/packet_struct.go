@@ -31,9 +31,14 @@ func (p *Packet) StreamIndex() int {
 func (p *Packet) SetStreamIndex(idx int) {
 	p.stream_index = C.int(idx)
 }
-func (p *Packet) ConvergenceDuration() int64 {
-	return int64(p.convergence_duration)
-}
+
+// Deprecated: Same as the duration field, but as int64_t. This was required
+// for Matroska subtitles, whose duration values could overflow when the
+// duration field was still an int
+// Commit: 948f3c19a8bd069768ca411212aaf8c1ed96b10d
+// func (p *Packet) ConvergenceDuration() int64 {
+// 	return int64(p.convergence_duration)
+// }
 func (p *Packet) Dts() int64 {
 	return int64(p.dts)
 }

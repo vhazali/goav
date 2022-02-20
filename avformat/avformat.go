@@ -21,8 +21,8 @@ import "C"
 import (
 	"unsafe"
 
-	"github.com/giorgisio/goav/avcodec"
-	"github.com/giorgisio/goav/avutil"
+	"github.com/vhazali/goav/avcodec"
+	"github.com/vhazali/goav/avutil"
 )
 
 type (
@@ -70,23 +70,31 @@ func (ctxt *AvIOContext) Close() error {
 	return avutil.ErrorFromCode(int(C.avio_close((*C.AVIOContext)(unsafe.Pointer(ctxt)))))
 }
 
-func (f *InputFormat) AvRegisterInputFormat() {
-	C.av_register_input_format((*C.struct_AVInputFormat)(f))
-}
+// Deprecated: Use automatic init with either ELF sections or C file parser
+// Commit: 8bc7fe4daf5c26555d77e2261c96ee14a800fad4
+// func (f *InputFormat) AvRegisterInputFormat() {
+// 	C.av_register_input_format((*C.struct_AVInputFormat)(f))
+// }
 
-func (f *OutputFormat) AvRegisterOutputFormat() {
-	C.av_register_output_format((*C.struct_AVOutputFormat)(f))
-}
+// Deprecated: Use automatic init with either ELF sections or C file parser
+// Commit: 8bc7fe4daf5c26555d77e2261c96ee14a800fad4
+// func (f *OutputFormat) AvRegisterOutputFormat() {
+// 	C.av_register_output_format((*C.struct_AVOutputFormat)(f))
+// }
 
+// Deprecated
+// could not find commit
 //If f is NULL, returns the first registered input format, if f is non-NULL, returns the next registered input format after f or NULL if f is the last one.
-func (f *InputFormat) AvIformatNext() *InputFormat {
-	return (*InputFormat)(C.av_iformat_next((*C.struct_AVInputFormat)(f)))
-}
+// func (f *InputFormat) AvIformatNext() *InputFormat {
+// 	return (*InputFormat)(C.av_iformat_next((*C.struct_AVInputFormat)(f)))
+// }
 
+// Deprecated
+// could not find commit
 //If f is NULL, returns the first registered output format, if f is non-NULL, returns the next registered output format after f or NULL if f is the last one.
-func (f *OutputFormat) AvOformatNext() *OutputFormat {
-	return (*OutputFormat)(C.av_oformat_next((*C.struct_AVOutputFormat)(f)))
-}
+// func (f *OutputFormat) AvOformatNext() *OutputFormat {
+// 	return (*OutputFormat)(C.av_oformat_next((*C.struct_AVOutputFormat)(f)))
+// }
 
 //Return the LIBAvFORMAT_VERSION_INT constant.
 func AvformatVersion() uint {
@@ -103,10 +111,12 @@ func AvformatLicense() string {
 	return C.GoString(C.avformat_license())
 }
 
+// Deprecated
+// could not find commit
 //Initialize libavformat and register all the muxers, demuxers and protocols.
-func AvRegisterAll() {
-	C.av_register_all()
-}
+// func AvRegisterAll() {
+// 	C.av_register_all()
+// }
 
 //Do global initialization of network components.
 func AvformatNetworkInit() int {
@@ -130,7 +140,7 @@ func AvformatGetClass() *Class {
 
 //Get side information from stream.
 func (s *Stream) AvStreamGetSideData(t AvPacketSideDataType, z int) *uint8 {
-	return (*uint8)(C.av_stream_get_side_data((*C.struct_AVStream)(s), (C.enum_AVPacketSideDataType)(t), (*C.int)(unsafe.Pointer(&z))))
+	return (*uint8)(C.av_stream_get_side_data((*C.struct_AVStream)(s), (C.enum_AVPacketSideDataType)(t), (*C.ulong)(unsafe.Pointer(&z))))
 }
 
 //Allocate an Context for an output format.

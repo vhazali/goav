@@ -10,7 +10,7 @@ import (
 	"reflect"
 	"unsafe"
 
-	"github.com/giorgisio/goav/avutil"
+	"github.com/vhazali/goav/avutil"
 )
 
 func (ctxt *Context) Chapters() **AvChapter {
@@ -34,7 +34,7 @@ func (ctxt *Context) Metadata() *avutil.Dictionary {
 }
 
 func (ctxt *Context) Internal() *AvFormatInternal {
-	return (*AvFormatInternal)(unsafe.Pointer(ctxt.internal))
+	return (*AvFormatInternal)(unsafe.Pointer(ctxt.Internal()))
 }
 
 func (ctxt *Context) Pb() *AvIOContext {
@@ -66,7 +66,8 @@ func (ctxt *Context) Streams() []*Stream {
 }
 
 func (ctxt *Context) Filename() string {
-	return C.GoString((*C.char)(unsafe.Pointer(&ctxt.filename[0])))
+	filename := ctxt.Filename()[0]
+	return C.GoString((*C.char)(unsafe.Pointer(&filename)))
 }
 
 // func (ctxt *Context) CodecWhitelist() string {
